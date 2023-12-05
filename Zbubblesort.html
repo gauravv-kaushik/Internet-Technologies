@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>
+            BUBBLE SORT
+        </title>
+    </head>
+    <body>
+        <script>
+            var n=prompt("enter no. of element :")
+            const arr=new Array();
+            for(var i=1;i<=n;i++){
+                var a=prompt("enter element "+i+" : ");
+                arr.push(a);
+            }
+            document.write("array before sorting :"+arr+"<br>");
+            for(var i=0;i<n-1;i++){
+                for(var j=i;j<n;j++){
+                    if(arr[i]>arr[j]){
+                        var temp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                    }
+                }
+            }
+            document.write("array after sorting :"+arr+"<br>");
+        </script>
+    </body>
+</html>

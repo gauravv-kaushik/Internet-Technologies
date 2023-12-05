@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>
+            GAURAV KAUSHIK
+        </title>
+    </head>
+    <style>
+        body{background-color:palevioletred;}
+        h1{text-align: center;}
+        label{width: 150px;
+            display: inline-block;
+        }
+        form{font-size:20px;}
+    </style>
+    <body background="panje.jpg">
+
+        <h1><b>Prior Your Pet...</b></h1>
+        <h3><b>Fill These Information</b></h3>
+        <form>
+            <label for="pname">Pet Name :</label>
+            <input type="text" id="1" name="Pet Name"><br>
+            <label for="age">Age :</label>
+            <input type="number" id="2" name="Age"><br>
+            <label for="weight">weight :</label>
+            <input type="number" id="3" name="Weight"><br>
+            <label for="ptype">Pet Type :</label>
+            <input type="text" id="4" name="Pet Type"><br>
+            <label for="like">Your Pet Like :</label>
+            <input type="text" id="5" name="Your pet like"><br>
+            <input type="reset" value="reset">
+            <input type="button" value="submit" onclick="abc()">
+        </form>
+    <script>
+            function abc(){
+                var temp=document.getElementsByTagName("input");
+                var obj={}
+                for(let i=0;i<temp.length-2;i++){
+                    let a=temp[i].name;
+                    let b=temp[i].value;
+                    obj[a]=b;
+                }
+                console.log(obj);
+        }  
+    </script>
+    </body>
+</html>

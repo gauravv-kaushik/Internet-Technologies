@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+        #d1{
+            height: 100%;
+            width: 200px;
+            background-color: aquamarine;
+            color: red;
+            font-size: 30px;
+        }
+        button{
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fetching Data From JSON file....</h1>
+    <button type="button" onclick="abc()">GO</button>
+    <div id="d1"></div>
+    <script>
+        function abc(){
+            //$(document).ready
+            var a=document.getElementById('d1');
+            $.ajax({
+                dataType:'json',
+                url : 'q7_json.json',
+                request : 'get',
+                success: function(data){
+                    $.each(data, function(key,val){
+                        var temp=(key+'<br>');
+                        a.innerHTML+=temp;
+                        $.each(val, function(i,j){
+                            console.log(i,':',j);
+                            temp=(i+':'+j+'<br>')
+                            a.innerHTML+=temp;
+                            $("b").text(key,val);
+                        })
+                        a.innerHTML+='<br>';  
+                    })
+                }
+            })
+        }
+    </script>
+</body>
+</html>
+<!-- {
+    "pet1" : {
+        "name" : "tuffy",
+        "Age" : "3",
+        "Type" : "cat"
+    },
+
+    "pet2" : {
+        "name" : "rockey",
+        "Age" : "5",
+        "Type" : "dog"
+    },
+
+    "pet3" : {
+        "name" : "doller",
+        "Age" : "6",
+        "Type" : "goat"
+    }
+} -->

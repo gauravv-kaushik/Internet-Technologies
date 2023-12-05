@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moving image</title>
+    <style>
+        #movingImage {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            transition: 1s; /* Smooth transition for movement */
+        }
+    </style>
+</head>
+<body>
+    <img id="movingImage" src="majnu.jpg">
+    <script>
+        function moveImage() { 
+            var windowWidth = window.innerWidth;
+            var windowHeight = window.innerHeight;
+
+            // Calculate random X and Y coordinates within the window
+            var randomX = Math.random() * (windowWidth - 100); // 100 is the image width
+            var randomY = Math.random() * (windowHeight - 100); // 100 is the image height
+
+            // Set the new coordinates for the image
+            document.getElementById("movingImage").style.left = randomX + "px";
+            document.getElementById("movingImage").style.top = randomY + "px";
+
+            setTimeout(moveImage, 2000); // Change image location every 2 seconds
+        }
+
+        // Start the image movement when the page loads
+        window.onload = moveImage;
+    </script>
+</body>
+</html>

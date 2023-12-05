@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>
+            GAURAV KAUSHIK
+        </title>
+    </head>
+    <style>
+        img{
+            float: right;
+        }
+    </style>
+    <body>
+        <img src="majnu.jpg" id="1" name="majnu">
+        <form>
+            Start:<input type="button" value="start" id="101" onclick="abc()"/>
+            Stop :<input type="button" value="stop" id="102" onclick="xyz()"/>
+        </form>
+    </body>
+    
+    <script>
+        var time;
+        var pd=0;
+        function b_b_b_saawan_ko_paani(){
+            document.getElementById("1").style.paddingRight=pd+"5px";
+            pd=pd+1;
+        }
+        function abc(){
+            time=setInterval(b_b_b_saawan_ko_paani,20);
+        }
+        function xyz(){
+            clearInterval(time);
+        }
+    </script>
+</html>
